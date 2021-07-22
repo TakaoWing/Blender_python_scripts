@@ -5,7 +5,7 @@ import sys
 for item in bpy.data.objects:
     bpy.data.objects.remove(item)
 
-bpy.ops.import_mesh.stl(filepath="/content/input.stl")
+bpy.ops.import_mesh.stl(filepath=sys.argv[1])
 
 bpy.ops.object.select_all(action='SELECT')
 
