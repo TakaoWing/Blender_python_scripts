@@ -12,6 +12,9 @@
 		],
 		"python.analysis.extraPaths": [
 			"C:/Program Files/Blender Foundation/Blender 2.93/2.93/scripts/modules"
-		]
+		],
+		"files.associations": {
+			"iostream": "cpp"
+		}
 	}
 }
