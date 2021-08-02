@@ -20,7 +20,6 @@ bool checkVox(ifstream &fin, ostringstream* stream)
     fin.read((char *)&version, 4);
 
     auto chunk_id = string(id, 4);
-    cout << chunk_id << ", " << version << "\n";
     *stream << chunk_id << ", " << version << "\n";
 
     return chunk_id == "VOX ";
@@ -51,7 +50,6 @@ int main(int argc, char *argv[])
         fin.read((char *)&child_size, 4);
         auto chunk_id = string(id, 4);
 
-        cout << chunk_id << ": " << chunk_size << ", " << child_size << "\n";
         stream << chunk_id << ": " << chunk_size << ", " << child_size << "\n";
         if (chunk_id == "SIZE")
         {
@@ -64,7 +62,6 @@ int main(int argc, char *argv[])
             fin.read((char *)&y, 4);
             fin.read((char *)&z, 4);
 
-            cout << x << ", " << y << ", " << z << "\n";
             stream << x << ", " << y << ", " << z << "\n";
         }
         else if (chunk_id == "XYZI")
@@ -77,7 +74,6 @@ int main(int argc, char *argv[])
             {
                 char data[4];
                 fin.read(data, 4);
-                cout << int(data[0]) << ", " << int(data[1]) << ", " << int(data[2]) << ", (" << int(data[3]) << ")\n";
                 stream << int(data[0]) << ", " << int(data[1]) << ", " << int(data[2]) << ", (" << int(data[3]) << ")\n";
             }
         }
